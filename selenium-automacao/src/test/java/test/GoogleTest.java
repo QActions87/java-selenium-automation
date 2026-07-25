@@ -1,5 +1,6 @@
 package test; // Define a qual pacote esta classe pertence dentro da estrutura de pastas do projeto
 
+import java.util.Collections; // Importa a utilidade Collections para criar listas imutáveis
 import org.junit.Test; // Importa a anotação @Test do JUnit para indicar que o método é um teste automatizado
 import org.openqa.selenium.WebDriver; // Importa a interface principal do Selenium para controle do navegador
 import org.openqa.selenium.chrome.ChromeDriver; // Importa a implementação do driver específica para o Google Chrome
@@ -32,6 +33,21 @@ public class GoogleTest {
 
         // Supera limitações de memória compartilhada temporária (/dev/shm) no ambiente Linux
         options.addArguments("--disable-dev-shm-usage");
+
+        // ----------------------------------------------------------------------------------
+        // Configurações para ocultar sinalizadores de automação e evitar avisos de robô
+        // ----------------------------------------------------------------------------------
+
+        // Oculta a flag 'navigator.webdriver' do motor Blink do navegador
+        options.addArguments("--disable-blink-features=AutomationControlled");
+
+        // Remove a barra amarela/cinza de aviso "O Chrome está sendo controlado por software de teste"
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+
+        // Desativa a extensão de automação do Chrome
+        options.setExperimentalOption("useAutomationExtension", false);
+
+        // ----------------------------------------------------------------------------------
 
         // Instancia o ChromeDriver aplicando todas as configurações e abrindo a janela do navegador
         driver = new ChromeDriver(options);
