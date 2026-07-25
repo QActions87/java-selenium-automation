@@ -3,37 +3,50 @@ package test; // Define a qual pacote esta classe pertence dentro da estrutura d
 import org.junit.Test; // Importa a anotação @Test do JUnit para indicar que o método é um teste automatizado
 import org.openqa.selenium.WebDriver; // Importa a interface principal do Selenium para controle do navegador
 import org.openqa.selenium.chrome.ChromeDriver; // Importa a implementação do driver específica para o Google Chrome
+import org.openqa.selenium.chrome.ChromeOptions; // Importa a classe de configurações e argumentos personalizados para o Google Chrome
 
 public class GoogleTest {
 
-    // Atributo para armazenar a instância do navegador (será usado nos métodos de teste)
+    // Atributo privado para armazenar e reutilizar a instância do navegador nos testes
     private WebDriver driver;
 
-    // Constante que armazena a URL base da aplicação que será testada
+    // Constante com a URL base do site que será acessado pela automação
     private final String urlBase = "https://www.google.com/";
 
-    // Constante com o caminho absoluto onde o binário do ChromeDriver está localizado no seu sistema Linux
-    private final String caminhoDriver = "/home/atom/Documents/QA/JAVA/JAVA-Selenium/SELENIUM/selenium-automacao/src/test/java/resource/chromedriver-v150";
+    // Constante com o caminho relativo até o binário do ChromeDriver (a partir da raiz do projeto)
+    private final String caminhoDriver = "src/test/java/resource/chromedriver-v150";
 
-    // Método auxiliar responsável por configurar o ambiente e abrir o navegador
+    // Método auxiliar privado responsável por configurar e inicializar a sessão do navegador
     private void iniciar() {
-        // Atribui a propriedade do sistema informando ao Selenium onde encontrar o binário do ChromeDriver
+        // Registra a propriedade do sistema informando ao Selenium o local exato do ChromeDriver
         System.setProperty("webdriver.chrome.driver", caminhoDriver);
 
-        // Inicializa o navegador Google Chrome (abre uma nova janela controlada pela automação)
-        driver = new ChromeDriver();
+        // Instancia a classe de opções para passar argumentos de execução ao Chrome
+        ChromeOptions options = new ChromeOptions();
 
-        // Maximiza a janela do navegador para garantir que todos os elementos da página fiquem visíveis
+        // Define o caminho relativo do binário do Chrome baixado para rodar no ambiente Linux
+        options.setBinary("src/test/java/resource/chrome-linux64/chrome");
+
+        // Desativa a camada de isolamento do Chrome para evitar conflitos de execução em sistemas Linux
+        options.addArguments("--no-sandbox");
+
+        // Supera limitações de memória compartilhada temporária (/dev/shm) no ambiente Linux
+        options.addArguments("--disable-dev-shm-usage");
+
+        // Instancia o ChromeDriver aplicando todas as configurações e abrindo a janela do navegador
+        driver = new ChromeDriver(options);
+
+        // Maximiza a janela do navegador para garantir a visibilidade total dos elementos em tela
         driver.manage().window().maximize();
 
-        // Navega até a URL especificada na variável urlBase (no caso, a home do Google)
+        // Envia o comando para o navegador carregar o endereço da URL base
         driver.get(urlBase);
     }
 
-    // Indica ao JUnit que este método público é um caso de teste executável
+    // Anotação do JUnit que identifica este método como um caso de teste executável
     @Test
     public void devePesquisarNoGoogle() {
-        // Chama o método auxiliar de inicialização para abrir o navegador na página do Google
+        // Executa a rotina de inicialização do navegador para iniciar o fluxo de teste
         iniciar();
     }
 
