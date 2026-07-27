@@ -1,10 +1,18 @@
 package test; // Define a qual pacote esta classe pertence dentro da estrutura de pastas do projeto
 
+import static org.junit.Assert.assertTrue;
 import java.util.Collections; // Importa a utilidade Collections para criar listas imutáveis
 import org.junit.Test; // Importa a anotação @Test do JUnit para indicar que o método é um teste automatizado
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver; // Importa a interface principal do Selenium para controle do navegador
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver; // Importa a implementação do driver específica para o Google Chrome
 import org.openqa.selenium.chrome.ChromeOptions; // Importa a classe de configurações e argumentos personalizados para o Google Chrome
+import java.time.Duration; // Importa a classe Duration do Java (java.time), usada para definir intervalos de tempo (ex: Duration.ofSeconds(10)) de forma moderna e clara
+import org.openqa.selenium.support.ui.ExpectedConditions;// Importa a classe de condições esperadas do Selenium, que contém métodos prontos para verificar o estado de um elemento (ex: se está visível, clicável, etc.)
+import org.openqa.selenium.support.ui.WebDriverWait; // Importa a classe de espera explícita do Selenium, responsável por fazer o driver aguardar até que uma determinada condição seja atendida antes de prosseguir
+
 
 public class GoogleTest {
 
@@ -64,6 +72,17 @@ public class GoogleTest {
     public void devePesquisarNoGoogle() {
         // Executa a rotina de inicialização do navegador para iniciar o fluxo de teste
         iniciar();
+
+        WebElement inputPerquisa = driver.findElement(By.name("q"));
+        inputPerquisa.sendKeys("café" + Keys.ENTER);
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        // Aguarda o elemento estar visível antes de pegar o texto
+        String elementoSubtitulo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("iAIpCb"))).getText();
+
+        assertTrue(elementoSubtitulo, elementoSubtitulo.contains("Bebida"));
+
     }
 
 }
