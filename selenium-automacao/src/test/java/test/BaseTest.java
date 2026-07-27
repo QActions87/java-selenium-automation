@@ -19,7 +19,7 @@ public abstract class BaseTest {
 
     @BeforeClass // Informa que este metodo sera executando antes de qualquer outro
     // Metodo auxiliar privado responsável por configurar e inicializar a sessão do navegador
-    private static void iniciar() {
+    public static void iniciar() {
         // Registra a propriedade do sistema informando ao Selenium o local exato do ChromeDriver
         System.setProperty("webdriver.chrome.driver", caminhoDriver);
 
@@ -38,16 +38,11 @@ public abstract class BaseTest {
         // ----------------------------------------------------------------------------------
         // Configurações para ocultar sinalizadores de automação e evitar avisos de robô
         // ----------------------------------------------------------------------------------
-
         // Oculta a flag 'navigator.webdriver' do motor Blink do navegador
         options.addArguments("--disable-blink-features=AutomationControlled");
 
         // Remove a barra amarela/cinza de aviso "O Chrome está sendo controlado por software de teste"
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-
-        // Desativa a extensão de automação do Chrome
-        options.setExperimentalOption("useAutomationExtension", false);
-
         // ----------------------------------------------------------------------------------
 
         // Instancia o ChromeDriver aplicando todas as configurações e abrindo a janela do navegador
@@ -59,9 +54,9 @@ public abstract class BaseTest {
         // Envia o comando para o navegador carregar o endereço da URL base
         driver.get(urlBase);
     }
-
+    // Informa que este method será executando após os outro
     @AfterClass
-    private static void finalizar() {
+    public static void finalizar() {
         driver.quit();
     }
 
