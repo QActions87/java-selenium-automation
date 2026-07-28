@@ -10,4 +10,24 @@ public abstract class BasePO {
     /** Driver base que será usado pelas PO */
     protected WebDriver Driver;
 
+    // Construtor com parâmetro:
+    protected BasePO(WebDriver driver) {
+        this.Driver = driver;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
