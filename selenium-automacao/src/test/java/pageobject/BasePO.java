@@ -1,8 +1,13 @@
 package pageobject;
 
+import org.openqa.selenium.WebDriver;
+
 /**
- *Classe base para criação das novas Pages Objects
+ * Classe base para criação das novas Pages Objects.
+ * Todas as classes PO devem herdar desta.
  */
-public class BasePO {
+public abstract class BasePO {
+    /** Driver base que será usado pelas PO */
+    protected WebDriver Driver;
 
 }
