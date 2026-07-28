@@ -59,5 +59,4 @@ public abstract class BaseTest {
     public static void finalizar() {
         driver.quit();
     }
-
 }
