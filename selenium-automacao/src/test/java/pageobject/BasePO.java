@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
  * Todas as classes PO devem herdar desta.
  */
 public abstract class BasePO {
-    /** Driver base que será usado pelas PO */
+    /** Driver base que será usado pelas classes PO */
     protected WebDriver Driver;
 
     // Construtor com parâmetro:
