@@ -1,6 +1,7 @@
 package pageobject;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Classe base para criação das novas Pages Objects.
@@ -13,6 +14,7 @@ public abstract class BasePO {
     // Construtor com parâmetro:
     protected BasePO(WebDriver driver) {
         this.Driver = driver;
+        PageFactory
     }
 
 }
