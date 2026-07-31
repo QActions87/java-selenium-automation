@@ -14,7 +14,7 @@ public abstract class BasePO {
     // Construtor com parâmetro:
     protected BasePO(WebDriver driver) {
         this.Driver = driver;
-        PageFactory
+        PageFactory.initElements(this.Driver, this);
     }
 
 }
