@@ -9,14 +9,17 @@ import org.openqa.selenium.support.PageFactory;
  */
 public abstract class BasePO {
     /** Driver base que será usado pelas classes PO */
-    protected WebDriver Driver;
+    protected WebDriver driver;
 
-    // Construtor com parâmetro:
+    /**
+     *  Construtor com parâmetro:
+     * Construtor base para criação da fábrica de elementos:
+     * @param driver driver da página atual.
+     */
     protected BasePO(WebDriver driver) {
-        this.Driver = driver;
-        PageFactory.initElements(this.Driver, this);
+        this.driver = driver;
+        PageFactory.initElements(this.driver, this);
     }
-
 }
 
 
