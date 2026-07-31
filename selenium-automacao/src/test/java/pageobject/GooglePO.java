@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class GooglePO extends BasePO {
-
+    // Mapeia a caixa de texto de busca do Google através do atributo 'name="q"' do HTML Com Page Factory:
     @FindBy(name = "q")
     public WebElement inputPesquisa;
 
