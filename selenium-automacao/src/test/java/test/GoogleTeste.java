@@ -29,5 +29,4 @@ public class GoogleTeste extends BaseTest {
         // Realiza a asserção do teste, validando se a String capturada contém o termo esperado "Bebida"
         assertTrue(elementoSubtitulo, elementoSubtitulo.contains("Bebida"));
     }
-
 }
