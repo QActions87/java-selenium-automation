@@ -10,7 +10,7 @@ public class GooglePO extends BasePO {
     // Mapeia a caixa de texto de busca do Google através do atributo 'name="q"' do HTML Com Page Factory:
     @FindBy(name = "q")
     public WebElement inputPesquisa;
-    // Mapeia o nome que aparece no span:
+    // Mapeia o subtítulo que aparece no span:
     @FindBy(className = "iAIpCb")
     public WebElement spanResultadoPesquisa;
 
@@ -18,7 +18,7 @@ public class GooglePO extends BasePO {
      * Construtor para criação da página do Google:
      * @param driver driver da página do Google.
      */
-    protected GooglePO(WebDriver driver) {
+    public GooglePO(WebDriver driver) {
         super(driver);
     }
 
