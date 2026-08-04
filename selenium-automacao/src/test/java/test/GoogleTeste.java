@@ -19,7 +19,7 @@ public class GoogleTeste extends BaseTest {
 
     // Anotação do JUnit que identifica este method como um caso de teste executável
     @Test
-    public void devePesquisarNoGoogle() {
+    public void TC001_devePesquisarNoGoogle() {
         // Mapeia a caixa de texto de busca do Google através do atributo 'name="q"' do HTML:
         //WebElement inputPesquisa = driver.findElement(By.name("q"));
         // Digita a palavra "café" no campo de busca e emula o pressionamento da tecla ENTER para submeter a pesquisa:

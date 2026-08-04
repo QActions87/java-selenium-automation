@@ -30,10 +30,18 @@ public class GooglePO extends BasePO {
         return wait.until(ExpectedConditions.visibilityOf(spanResultadoPesquisa)).getText();
     }
 
-    // Method que abstrai a forma de pesquisar a palavra:
+    /**
+     *  Method que abstrai a forma de pesquisar a palavra:
+     * @param texto Texto retornado.
+     */
     public void pesquisar(String texto) {
         inputPesquisa.sendKeys(texto + Keys.ENTER);
     }
+
+    /**
+     * Confe
+     */
+
 }
 
 
