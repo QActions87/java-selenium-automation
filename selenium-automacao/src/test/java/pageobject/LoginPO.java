@@ -17,6 +17,9 @@ public class LoginPO extends BasePO {
     @FindBy(id = "btn-entrar")
     public WebElement btnEntrar;
 
+    // Mapeia o Span com a mensagem com Page Factory:
+    @FindBy(css = "form.form-login>div.alert>span#mensagem")
+    public WebElement spanMensagem;
     /**
      * Construtor com parâmetro:
      * invocação do construtor canônico para criação da instância filha::
