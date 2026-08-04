@@ -41,7 +41,7 @@ Abstração de Ação: Método pesquisar(String texto) para automatizar o envio 
 Execução orientada a valor de negócio, mantendo as asserções (Assert.assertTrue) limpas e desacopladas da lógica de localização de elementos.
 
 ## 💻 Tecnologias e Ferramentas
-Linguagem: Java 8+
+Linguagem: **Java 8+**
 
 Framework de Automacao: **Selenium WebDriver (v3.x)**
 
