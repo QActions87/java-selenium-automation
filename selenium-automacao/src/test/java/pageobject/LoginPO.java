@@ -13,6 +13,10 @@ public class LoginPO extends BasePO {
     @FindBy(id = "senha")
     public WebElement inputSenha;
 
+    // Mapeia o botão Entrar com Page Factory:
+    @FindBy(id = "btn-entrar")
+    public WebElement btnEntrar;
+
     /**
      * Construtor com parâmetro:
      * invocação do construtor canônico para criação da instância filha::
