@@ -2,10 +2,10 @@
 
 ![Java](https://api.devicons.dev.br/icon?icons=Linux%2CIdea%2CJava%2CSelenium%2CMaven&size=48&theme=dark&perline=30)
 
-Este repositório contém o projeto de automação de testes de interface do usuário (UI), desenvolvido como etapa introdutória e consolidativa dos conceitos fundamentais de testes automatizados Web com Java, Selenium 3 e JUnit 4.
+Este repositório contém o projeto de automação de **testes de interface do usuário (UI)**, desenvolvido como etapa introdutória e consolidativa dos conceitos fundamentais de testes automatizados Web com **Java**, **Selenium 3** e **JUnit 4**.
 
 ## 📌 Arquitetura & Padrões de Projeto
-O projeto adota o padrão Page Object Model (POM) integrado ao Page Factory do Selenium, promovendo o reuso de código, facilitando a manutenção e garantindo o isolamento entre a regra do teste e o mapeamento da interface.
+O projeto adota o padrão **Page Object Model (POM)** integrado ao **Page Factory do Selenium**, promovendo o reuso de código, facilitando a manutenção e garantindo o isolamento entre a regra do teste e o mapeamento da interface.
 
 ```
 src/
