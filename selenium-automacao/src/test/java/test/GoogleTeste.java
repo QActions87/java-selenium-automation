@@ -32,7 +32,7 @@ public class GoogleTeste extends BaseTest {
 
         // Pausa a execução até o elemento com a classe CSS 'iAIpCb' ficar visível e extrai o texto visível contido nele:
         //String elementoSubtitulo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("iAIpCb"))).getText();
-        String resultado = googlePage.spanResultadoPesquisa.getText();
+        String resultado = googlePage.obterTextoSubtitulo();
 
         // Realiza a asserção do teste, validando se a String capturada contém o termo esperado "Bebida":
         //assertTrue(elementoSubtitulo, elementoSubtitulo.contains("Bebida"));
