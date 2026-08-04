@@ -1,5 +1,6 @@
 package pageobject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,4 +29,29 @@ public class GooglePO extends BasePO {
         // O wait aguarda o WebElement mapeado pelo @FindBy ficar visível
         return wait.until(ExpectedConditions.visibilityOf(spanResultadoPesquisa)).getText();
     }
+
+    // Method que abstrai a forma de pesquisar a palavra:
+    public void pesquisar(String texto) {
+        inputPesquisa.sendKeys(texto + Keys.ENTER);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
