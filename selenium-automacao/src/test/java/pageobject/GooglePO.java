@@ -37,11 +37,6 @@ public class GooglePO extends BasePO {
     public void pesquisar(String texto) {
         inputPesquisa.sendKeys(texto + Keys.ENTER);
     }
-
-    /**
-     * Confe
-     */
-
 }
 
 
