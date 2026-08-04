@@ -5,9 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPO extends BasePO {
-    // Mapeia a caixa de texto de busca do Google através do atributo 'name="q"' do HTML Com Page Factory:
+    // Mapeia a caixa de texto para inserir email Com Page Factory:
     @FindBy(id = "email")
     public WebElement inputEmail;
+
+    // Mapeia a caixa de texto para inserir senha Com Page Factory:
+    @FindBy(id = "senha")
+    public WebElement inputSenha;
 
     /**
      * Construtor com parâmetro:
