@@ -25,7 +25,12 @@ public class LoginPO extends BasePO {
      * invocação do construtor canônico para criação da instância filha::
      * @param driver driver da página atual.
      */
-    protected LoginPO(WebDriver driver) {
+    public LoginPO(WebDriver driver) {
         super(driver);
+    }
+
+    // Method para obter mensagem do span:
+    public String obterMensagem() {
+        return spanMensagem.getText();
     }
 }

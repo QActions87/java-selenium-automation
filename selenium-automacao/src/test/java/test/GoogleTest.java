@@ -6,13 +6,14 @@ import org.junit.Test; // Importa a anotação @Test do JUnit para indicar que o
 import org.openqa.selenium.support.ui.WebDriverWait; // Importa a classe de espera explícita do Selenium, responsável por pausar a execução até uma condição ser atendida
 import pageobject.GooglePO;
 
-@SuppressWarnings("ALL")
+
 public class GoogleTest extends BaseTest {
 
     private static GooglePO googlePage;
 
     @BeforeClass
     public static void prepararTestes() {
+        driver.get("https://www.google.com/");
         // Instância do Obj GooglePO:
         googlePage = new GooglePO(driver);
     }

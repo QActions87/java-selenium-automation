@@ -13,7 +13,7 @@ public abstract class BaseTest {
     // Atributo privado para armazenar e reutilizar a instância do navegador nos testes
     protected static WebDriver driver;
     // Constante com a URL base do site que será acessado pela automação
-    private static final String urlBase = "https://www.google.com/";
+    private static final String urlBase = "file:///home/atom/Documents/QA/JAVA/JAVA-Selenium/Outros/controle-de-produtos/sistema/login.html";
     // Constante com o caminho relativo até o binário do ChromeDriver (a partir da raiz do projeto)
     private static final String caminhoDriver = "src/test/java/resource/chromedriver-v150";
 
