@@ -56,7 +56,7 @@ Gerenciador de Dependências: **Apache Maven**
 
 1. Clonar o Repositório:
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/QActions87/java-selenium-automation.git
 ```
 
 2. Garantir as Permissões do Driver (Linux):
