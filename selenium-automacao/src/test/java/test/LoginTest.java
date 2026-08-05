@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
     // Anotação do JUnit que identifica este method como um caso de teste executável
     @Test
     public void TC001_naoDeveLogarNoSistemaComEmailESenhaVazios() {
-        loginPage.inputEmail.sendKeys("");
+        loginPage.escrever(loginPage.inputEmail, "");
         loginPage.inputSenha.sendKeys("");
         loginPage.btnEntrar.click();
         String mensagem = loginPage.obterMensagem();
