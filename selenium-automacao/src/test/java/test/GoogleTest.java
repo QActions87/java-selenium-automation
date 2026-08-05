@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait; // Importa a classe de espe
 import pageobject.GooglePO;
 
 @SuppressWarnings("ALL")
-public class GoogleTeste extends BaseTest {
+public class GoogleTest extends BaseTest {
 
     private static GooglePO googlePage;
 
