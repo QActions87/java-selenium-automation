@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void TC001_naoDeveLogarNoSistemaComEmailESenhaVazios() {
         loginPage.escrever(loginPage.inputEmail, "");
-        loginPage.inputSenha.sendKeys("");
+        loginPage.escrever(loginPage.inputSenha, "");
         loginPage.btnEntrar.click();
         String mensagem = loginPage.obterMensagem();
         assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
