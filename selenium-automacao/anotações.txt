@@ -12,4 +12,4 @@ Passo a passo para criação de testes automatizados:
     2.3 Criar um método inicial que saiba instanciar uma PO de login.
     2.4 Criar os testes baseados na Planilha
         2.4.1 Não deve logar no sistema com email e senha varias.
-        2.4.2
+        2.4.2.
