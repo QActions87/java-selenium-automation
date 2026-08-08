@@ -35,7 +35,8 @@ public class GooglePO extends BasePO {
      * @param texto Texto retornado.
      */
     public void pesquisar(String texto) {
-        inputPesquisa.sendKeys(texto + Keys.ENTER);
+        inputPesquisa.clear(); // 1. Limpa o texto existente no campo HTML.
+        inputPesquisa.sendKeys(texto + Keys.ENTER); // Digita o novo valor (mesmo que seja "").
     }
 }
 
