@@ -31,7 +31,7 @@ public class LoginPO extends BasePO {
     }
 
     public void escrever(WebElement input, String texto) {
-        input.clear(); // 1. Limpa o texto existente no campo HTML.
+        input.clear(); // Limpa o texto existente no campo HTML.
         input.sendKeys(texto + Keys.TAB); // Digita o novo valor (mesmo que seja "").
     }
 
