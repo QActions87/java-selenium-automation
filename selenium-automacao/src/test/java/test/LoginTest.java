@@ -40,4 +40,28 @@ public class LoginTest extends BaseTest {
         String mensagem = loginPage.obterMensagem();
         assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
     }
+
+    // 4º Caso de Teste:
+    @Test
+    public void TC004_naoDeveLogarNoSistemaComEmailIncorretoESenhaIncorreta() {
+        loginPage.executarAcaoDeLogar("teste", "teste");
+        String mensagem = loginPage.obterMensagem();
+        assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
+    }
+
+    // 5º Caso de Teste:
+    @Test
+    public void TC005_naoDeveLogarNoSistemaComEmailCorretoESenhaIncorreta() {
+        loginPage.executarAcaoDeLogar("admin@admin.com", "teste");
+        String mensagem = loginPage.obterMensagem();
+        assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
+    }
+
+    // 6º Caso de Teste:
+    @Test
+    public void TC006_naoDeveLogarNoSistemaComEmailIncorretoESenhaCorreta() {
+        loginPage.executarAcaoDeLogar("Aadmin@admin.com", "admin@123");
+        String mensagem = loginPage.obterMensagem();
+        assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
+    }
 }
