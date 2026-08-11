@@ -9,6 +9,12 @@ import static org.junit.Assert.assertEquals;
 public class LoginTest extends BaseTest {
     private static LoginPO loginPage;
 
+    private void executarAcaoDeLogar (String email, String senha) {
+        loginPage.escrever(loginPage.inputEmail, email);
+        loginPage.escrever(loginPage.inputSenha, senha);
+        loginPage.btnEntrar.click();
+    }
+
     @BeforeClass
     public static void prepararTeste() {
         // Instância do Obj LoginPO:
