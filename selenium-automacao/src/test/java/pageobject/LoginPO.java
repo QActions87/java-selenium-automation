@@ -41,6 +41,12 @@ public class LoginPO extends BasePO {
     }
 
     // Função que executa a ação de entrar:
+
+    /**
+     * Méthod que tenta executar a ação de entrar no sistema:
+     * @param email Email para tentativa de entrada.
+     * @param senha Senha para tentativa de entrada.
+     */
     public void executarAcaoDeLogar (String email, String senha) {
         escrever(inputEmail, email);
         escrever(inputSenha, senha);
