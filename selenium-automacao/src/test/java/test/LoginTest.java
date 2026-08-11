@@ -10,7 +10,6 @@ public class LoginTest extends BaseTest {
     // Atributo:
     private static LoginPO loginPage;
 
-
     @BeforeClass
     public static void prepararTeste() {
         // Instância do Obj LoginPO:
