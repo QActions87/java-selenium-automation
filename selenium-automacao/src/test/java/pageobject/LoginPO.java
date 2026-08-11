@@ -39,4 +39,11 @@ public class LoginPO extends BasePO {
     public String obterMensagem() {
         return spanMensagem.getText();
     }
+
+    // Função que executa a ação de entrar:
+    public void executarAcaoDeLogar (String email, String senha) {
+        escrever(inputEmail, email);
+        escrever(inputSenha, senha);
+        btnEntrar.click();
+    }
 }
