@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
     // Anotação do JUnit que identifica este method como um caso de teste executável
     @Test
     public void TC001_naoDeveLogarNoSistemaComEmailESenhaVazios() {
-        executarAcaoDeLogar("", "");
+        loginPage.executarAcaoDeLogar("", "");
         String mensagem = loginPage.obterMensagem();
         assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
     }
@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
     // 2º Caso de Teste:
     @Test
     public void TC002_naoDeveLogarNoSistemaComEmailIncorretoESenhaVazia() {
-        executarAcaoDeLogar("teste", "");
+        loginPage.executarAcaoDeLogar("teste", "");
         String mensagem = loginPage.obterMensagem();
         assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
     }
@@ -37,7 +37,7 @@ public class LoginTest extends BaseTest {
     // 3º Caso de Teste:
     @Test
     public void TC003_naoDeveLogarNoSistemaComEmailVazioESenhaIncorreta() {
-        executarAcaoDeLogar("", "teste");
+        loginPage.executarAcaoDeLogar("", "teste");
         String mensagem = loginPage.obterMensagem();
         assertEquals("Informe usuário e senha, os campos não podem ser brancos.", mensagem);
     }
