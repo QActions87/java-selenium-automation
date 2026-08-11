@@ -7,8 +7,9 @@ import pageobject.LoginPO;
 import static org.junit.Assert.assertEquals;
 
 public class LoginTest extends BaseTest {
+    // Atributo:
     private static LoginPO loginPage;
-
+    // Função que executa a ação de entrar:
     private void executarAcaoDeLogar (String email, String senha) {
         loginPage.escrever(loginPage.inputEmail, email);
         loginPage.escrever(loginPage.inputSenha, senha);
