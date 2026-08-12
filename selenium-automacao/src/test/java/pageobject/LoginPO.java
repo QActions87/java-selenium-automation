@@ -52,4 +52,9 @@ public class LoginPO extends BasePO {
         escrever(inputSenha, senha);
         btnEntrar.click();
     }
+
+    // Method para obter título da página após entrar no sistema:
+    public String obterTituloDaPaginaDeLogado() {
+        return driver.getTitle();
+    }
 }
