@@ -72,6 +72,6 @@ public class LoginTest extends BaseTest {
     @Test
     public void TC007_deveLogarNoSistemaComEmailCorretoESenhaCorreta() {
         loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
-        assertEquals("AControle de Produtos", loginPage.obterTituloDaPaginaDeLogado());
+        assertEquals("Controle de Produtos", loginPage.obterTituloDaPaginaDeLogado());
     }
 }
