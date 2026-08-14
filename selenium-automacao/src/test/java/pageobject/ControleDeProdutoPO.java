@@ -9,8 +9,8 @@ public class ControleDeProdutoPO extends BasePO{
     @FindBy(id = "btn-adicionar")
     private WebElement buttonAdicionar;
 
-    @FindBy(id = "btn-adicionar")
-    private WebElement buttonAdicionar;
+    @FindBy(css = "ul>li>a.nav-link")
+    private WebElement linkVoltar;
 
 
     /**
