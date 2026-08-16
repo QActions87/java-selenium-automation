@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class ControleDeProdutoPO extends BasePO{
     // Capturando botão 'Criar':
     @FindBy(id = "btn-adicionar")
-    public WebElement buttonAdicionar;
+    public WebElement buttonCriar;
     // Capturando botão Voltar:
     @FindBy(css = "ul>li>a.nav-link")
     public WebElement linkVoltar;
@@ -15,6 +15,19 @@ public class ControleDeProdutoPO extends BasePO{
     @FindBy(css = "div.modal-header>h4.modal-title")
     public WebElement tituloModal;
 
+    // Mapeando os campos do modal de cadastro de produto:
+    // Mapeando campo 'Código':
+    @FindBy(id = "codigo")
+    public WebElement inputCodigo;
+    // Mapeando campo 'Nome':
+    @FindBy(id = "nome")
+    public WebElement inputNome;
+    // Mapeando campo 'Quantidade':
+    @FindBy(id = "quantidade")
+    public WebElement inputQuantidade;
+    // Mapeando campo 'Valor':
+    @FindBy(id = "valor")
+    public WebElement inputValor;
 
     /**
      * Construtor com parâmetro:
