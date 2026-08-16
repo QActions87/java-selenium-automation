@@ -17,9 +17,9 @@ public class ControleDeProdutoTest extends BaseTest{
     public static void prepararTeste() {
         // Instância do Obj LoginPO:
         loginPage = new LoginPO(driver);
-        // Instância do Obj ControleDeProdutoPO:
-        controleDeProdutoPage = new ControleDeProdutoPO(driver);
         // Invocando ação de logar a partir da instância 'loginPage':
         loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
+        // Instância do Obj ControleDeProdutoPO:
+        controleDeProdutoPage = new ControleDeProdutoPO(driver);
     }
 }
