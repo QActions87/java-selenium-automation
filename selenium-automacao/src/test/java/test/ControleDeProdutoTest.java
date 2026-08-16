@@ -30,6 +30,13 @@ public class ControleDeProdutoTest extends BaseTest{
     // Casos de Teste:
     @Test
     public void TC001_deveAbrirModalParaCadastroAoClicarNoBotaoCriar() {
+        // 1º Click no botão 'Criar':
         controleDeProdutoPage.buttonAdicionar.click();
+        // 2º Click no botão 'Criar':
+        controleDeProdutoPage.buttonAdicionar.click();
+        // Capturando o título do modal, após clicar em Criar:
+        String titulo = controleDeProdutoPage.tituloModal.getText();
+        // Validação do título:
+        assertEquals("Produto", titulo);
     }
 }
