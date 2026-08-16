@@ -28,6 +28,15 @@ public class ControleDeProdutoPO extends BasePO{
     // Mapeando campo 'Valor':
     @FindBy(id = "valor")
     public WebElement inputValor;
+    // Mapeando campo 'Valor':
+    @FindBy(id = "data")
+    public WebElement inputData;
+    // Mapeando botão 'Salvar':
+    @FindBy(id = "btn-salvar")
+    public WebElement btnSalvar;
+    // Mapeando botão 'Sair':
+    @FindBy(id = "btn-sair")
+    public WebElement btnSair;
 
     /**
      * Construtor com parâmetro:
