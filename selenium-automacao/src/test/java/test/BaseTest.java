@@ -54,7 +54,7 @@ public abstract class BaseTest {
         // Envia o comando para o navegador carregar o endereço da URL base
         driver.get(urlBase);
     }
-    // Informa que este method será executando após os outro
+    // Informa que este method será executado após os outro
     @AfterClass
     public static void finalizar() {
         driver.quit();
