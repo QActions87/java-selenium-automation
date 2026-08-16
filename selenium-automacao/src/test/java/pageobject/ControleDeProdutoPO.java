@@ -5,12 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ControleDeProdutoPO extends BasePO{
-
+    // Capturando botão 'Criar':
     @FindBy(id = "btn-adicionar")
-    private WebElement buttonAdicionar;
-
+    public WebElement buttonAdicionar;
+    // Capturando botão Voltar:
     @FindBy(css = "ul>li>a.nav-link")
-    private WebElement linkVoltar;
+    public WebElement linkVoltar;
+    // Captura o título do modal (Tela após clicar no botão 'Criar'):
+    @FindBy(css = "div.modal-header>h4.modal-title")
+    public WebElement tituloModal;
 
 
     /**

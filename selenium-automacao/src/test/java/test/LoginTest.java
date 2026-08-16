@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import pageobject.LoginPO;
 
+
 import static org.junit.Assert.assertEquals;
 // Orientação do JUnit para que os testes sejam executados em ordem numérica crescente:
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
