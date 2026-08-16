@@ -53,8 +53,4 @@ public class LoginPO extends BasePO {
         btnEntrar.click();
     }
 
-    // Method para obter título da página após entrar no sistema:
-    public String obterTituloDaPaginaDeLogado() {
-        return driver.getTitle();
-    }
 }
