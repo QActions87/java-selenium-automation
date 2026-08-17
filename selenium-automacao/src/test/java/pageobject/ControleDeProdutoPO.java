@@ -53,7 +53,7 @@ public class ControleDeProdutoPO extends BasePO{
         escrever(inputNome, nome);
         escrever(inputQuantidade, quantidade.toString());
         escrever(inputValor, valor.toString());
-
+        btnSalvar.click();
     }
 }
 
