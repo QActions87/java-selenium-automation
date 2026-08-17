@@ -37,6 +37,9 @@ public class ControleDeProdutoPO extends BasePO{
     // Mapeando botão 'Sair':
     @FindBy(id = "btn-sair")
     public WebElement btnSair;
+    // Mapeando botão 'Sair':
+    @FindBy(id = "mensagem")
+    public WebElement spanMensagem;
 
     /**
      * Construtor com parâmetro:
@@ -53,6 +56,7 @@ public class ControleDeProdutoPO extends BasePO{
         escrever(inputNome, nome);
         escrever(inputQuantidade, quantidade.toString());
         escrever(inputValor, valor.toString());
+        escrever(inputData, data);
         btnSalvar.click();
     }
 }
