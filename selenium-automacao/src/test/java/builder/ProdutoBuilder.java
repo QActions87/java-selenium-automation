@@ -4,7 +4,59 @@ public class ProdutoBuilder {
     // Valores padrão:
     public String codigo = "00001";
     public String nome = "Produto Padrão";
-    public Integer quantidade = 1;
-    public Double valor = 1.0;
+    public String quantidade = "1";
+    public String valor = "1.0";
     public String data = "17/08/2026";
+
+    // Métodos fluentes que retornam a própria instância:
+    public ProdutoBuilder adicionarCodigo(String codigo) {
+        this.codigo = codigo;
+        return this;
+    }
+
+    public ProdutoBuilder adicionarNome(String nome) {
+        this.nome = nome;
+        return this;
+    }
+
+    public ProdutoBuilder adicionarQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+        return this;
+    }
+
+    public ProdutoBuilder adicionarValor(String valor) {
+        this.valor = valor;
+        return this;
+    }
+
+    public ProdutoBuilder adicionarData(String data) {
+        this.data = data;
+        return this;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
