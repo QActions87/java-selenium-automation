@@ -46,7 +46,7 @@ public class ControleDeProdutoTest extends BaseTest{
 
     @Test
     public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
-
+        controleDeProdutoPage.cadastrarProduto("0001", "Machado", 13, 21.00, "17/08/2026"  );
     }
 }
 
