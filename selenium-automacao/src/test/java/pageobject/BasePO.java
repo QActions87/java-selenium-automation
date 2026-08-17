@@ -1,6 +1,8 @@
 package pageobject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -24,6 +26,11 @@ public abstract class BasePO {
     // Method para obter título da página após entrar no sistema:
     public String obterTituloDaPaginaDeLogado() {
         return driver.getTitle();
+    }
+    // Method para escrever em campo Web Element de 'input':
+    public void escrever(WebElement input, String texto) {
+        input.clear(); // Limpa o texto existente no campo HTML.
+        input.sendKeys(texto + Keys.TAB); // Digita o novo valor (mesmo que seja "").
     }
 }
 

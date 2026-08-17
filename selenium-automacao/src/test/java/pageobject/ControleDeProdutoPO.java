@@ -1,5 +1,6 @@
 package pageobject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,7 +46,12 @@ public class ControleDeProdutoPO extends BasePO{
      * @param driver driver da página atual.
      */
     public ControleDeProdutoPO(WebDriver driver) {
+
         super(driver);
+    }
+    public void cadastrarProduto(String codigo, String nome, Integer quantidade, Double valor, String data) {
+        inputCodigo.clear();
+        inputCodigo.sendKeys(codigo + Keys.TAB);
     }
 }
 

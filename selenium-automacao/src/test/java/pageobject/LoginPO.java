@@ -30,11 +30,6 @@ public class LoginPO extends BasePO {
         super(driver);
     }
 
-    public void escrever(WebElement input, String texto) {
-        input.clear(); // Limpa o texto existente no campo HTML.
-        input.sendKeys(texto + Keys.TAB); // Digita o novo valor (mesmo que seja "").
-    }
-
     // Method para obter mensagem do span:
     public String obterMensagem() {
         return spanMensagem.getText();

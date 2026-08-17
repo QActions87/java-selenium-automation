@@ -38,6 +38,15 @@ public class ControleDeProdutoTest extends BaseTest{
         String titulo = controleDeProdutoPage.tituloModal.getText();
         // Validação do título do modal:
         assertEquals("Produto", titulo);
+        // 1º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        // 2º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+    }
+
+    @Test
+    public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
+
     }
 }
 
