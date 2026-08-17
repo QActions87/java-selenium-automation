@@ -1,9 +1,10 @@
 package builder;
 
 public class ProdutoBuilder {
-    public String codigo;
-    public String nome;
-    public Integer quantidade;
-    public Double valor;
-    public String data;
+    // Valores padrão:
+    public String codigo = "00001";
+    public String nome = "Produto Padrão";
+    public Integer quantidade = 1;
+    public Double valor = 1.0;
+    public String data = "17/08/2026";
 }
