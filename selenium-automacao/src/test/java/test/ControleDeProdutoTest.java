@@ -43,9 +43,24 @@ public class ControleDeProdutoTest extends BaseTest{
         // 2º click para sair do modal para não atrapalhar o próximo test:
         controleDeProdutoPage.btnSair.click();
     }
-
+    /*
     @Test
     public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
+        // 1º Click no botão 'Criar':
+        controleDeProdutoPage.buttonCriar.click();
+        // 2º Click no botão 'Criar':
+        controleDeProdutoPage.buttonCriar.click();
+        // Inputs para cadastrar produto:
+        controleDeProdutoPage.cadastrarProduto("", "Machado", 13, 21.00, "17/08/2026");
+        // Capturando a mensagem do span:
+        String mensagem = controleDeProdutoPage.spanMensagem.getText();
+        // Validação do título do modal:
+        assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
+    }
+    */
+    // Testando implementação do pattern Builder:
+    @Test
+    public void TC003_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
         // 1º Click no botão 'Criar':
         controleDeProdutoPage.buttonCriar.click();
         // 2º Click no botão 'Criar':

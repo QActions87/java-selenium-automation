@@ -2,11 +2,11 @@ package builder;
 
 public class ProdutoBuilder {
     // Valores padrão:
-    public String codigo = "00001";
-    public String nome = "Produto Padrão";
-    public String quantidade = "1";
-    public String valor = "1.0";
-    public String data = "17/08/2026";
+    private String codigo = "00001";
+    private String nome = "Produto Padrão";
+    private String quantidade = "1";
+    private String valor = "1.0";
+    private String data = "17/08/2026";
 
     // Métodos fluentes que retornam a própria instância:
     public ProdutoBuilder adicionarCodigo(String codigo) {
