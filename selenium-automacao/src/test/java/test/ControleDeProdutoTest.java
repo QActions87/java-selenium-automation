@@ -1,5 +1,6 @@
 package test;
 
+import builder.ProdutoBuilder;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -65,8 +66,8 @@ public class ControleDeProdutoTest extends BaseTest{
         controleDeProdutoPage.buttonCriar.click();
         // 2º Click no botão 'Criar':
         controleDeProdutoPage.buttonCriar.click();
-        // Inputs para cadastrar produto:
-        controleDeProdutoPage.cadastrarProduto("", "Machado", 13, 21.00, "17/08/2026");
+        // Instanciando builder:
+        ProdutoBuilder produto = new ProdutoBuilder();
         // Capturando a mensagem do span:
         String mensagem = controleDeProdutoPage.spanMensagem.getText();
         // Validação do título do modal:
