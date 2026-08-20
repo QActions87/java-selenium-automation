@@ -14,6 +14,7 @@ import static org.junit.Assert.assertEquals;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ControleDeProdutoTest extends BaseTest{
     // Atributos:
+    String mensagem = "Todos os campos são obrigatórios para o cadastro!";
     private static LoginPO loginPage;
     private static ControleDeProdutoPO controleDeProdutoPage;
 
@@ -74,7 +75,7 @@ public class ControleDeProdutoTest extends BaseTest{
                 .adicionarNome("")
                 .builder();
         // Validação do título do modal:
-        assertEquals("Todos os campos são obrigatórios para o cadastro!", controleDeProdutoPage.spanMensagem.getText());
+        assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
 
 
         // Implementando encadeamento de métodos com o builder:
