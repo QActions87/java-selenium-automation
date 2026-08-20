@@ -1,5 +1,9 @@
 package builder;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import pageobject.ControleDeProdutoPO;
+
 public class ProdutoBuilder {
     // Valores padrão:
     public String codigo = "00001";
@@ -7,7 +11,10 @@ public class ProdutoBuilder {
     public String quantidade = "1";
     public String valor = "1.0";
     public String data = "17/08/2026";
+    // Construtor recebendo o driver:
+    public ProdutoBuilder(WebDriver driver) {
 
+    }
     // Métodos fluentes que retornam a própria instância:
     public ProdutoBuilder adicionarCodigo(String codigo) {
         this.codigo = codigo;
@@ -34,6 +41,9 @@ public class ProdutoBuilder {
         return this;
     }
 
+    public void builder() {
+        new ControleDeProdutoPO()
+    }
 }
 
 
