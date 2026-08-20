@@ -66,10 +66,16 @@ public class ControleDeProdutoTest extends BaseTest{
         controleDeProdutoPage.buttonCriar.click();
         // 2º Click no botão 'Criar':
         controleDeProdutoPage.buttonCriar.click();
-        // Instanciando builder:
+        // Instanciando builder para preencher os dados na tela:
         ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleDeProdutoPage);
-        // Chamando o method 'builder' a partir da instância produtoBuilder do Builder:
-        produtoBuilder.builder();
+        // Chamando o method 'builder' a partir da instância produtoBuilder do Builder para efetuar o cadastro:
+        //produtoBuilder.builder();
+        // Testando encadeamento de métodos com o builder:
+        produtoBuilder
+                .adicionarNome("Martelo")
+                .adicionarQuantidade("13")
+                .adicionarValor("59.90")
+                .builder();
         // Capturando a mensagem do span:
         String mensagem = controleDeProdutoPage.spanMensagem.getText();
         // Validação do título do modal:
