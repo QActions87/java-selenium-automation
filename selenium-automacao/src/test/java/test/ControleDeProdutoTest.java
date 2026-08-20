@@ -67,9 +67,9 @@ public class ControleDeProdutoTest extends BaseTest{
         // 2º Click no botão 'Criar':
         controleDeProdutoPage.buttonCriar.click();
         // Instanciando builder:
-        ProdutoBuilder produtoBuilder = new ProdutoBuilder();
-        // Chamando o method 'cadastrarProduto' a partir da instância da ControleDeProdutoPO passando o Builder:
-        controleDeProdutoPage.cadastrarProduto(produtoBuilder);
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleDeProdutoPage);
+        // Chamando o method 'builder' a partir da instância produtoBuilder do Builder:
+        produtoBuilder.builder();
         // Capturando a mensagem do span:
         String mensagem = controleDeProdutoPage.spanMensagem.getText();
         // Validação do título do modal:
