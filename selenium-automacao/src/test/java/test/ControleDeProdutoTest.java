@@ -60,6 +60,7 @@ public class ControleDeProdutoTest extends BaseTest{
         assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
     }
     */
+    // Suite de testes negativos:
     // Testando implementação do pattern Builder:
     @Test
     public void TC003_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
@@ -70,25 +71,68 @@ public class ControleDeProdutoTest extends BaseTest{
         // Instanciando builder para preencher os dados na tela:
         ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleDeProdutoPage);
         // Chamando o method 'builder' a partir da instância produtoBuilder do Builder para efetuar o cadastro:
-        // Testando se o produto é adicionado sem código:
+
+        // Cenários de testes:
+        // 1º Cenário:Testando se o produto é adicionado sem código:
         produtoBuilder
                 .adicionarNome("")
                 .builder();
         // Validação do título do modal:
         assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
+        //-----------------------------------------------------------------------------------
 
-
-        // Implementando encadeamento de métodos com o builder:
+        // 2º Cenário: Testando se o produto é adicionado sem quantidade declarada:
         produtoBuilder
-                .adicionarNome("Martelo")
+                .adicionarQuantidade(null)
+                .builder();
+        // Validação do título do modal:
+        assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
+        // 1º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        // 2º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        //-----------------------------------------------------------------------------------
+
+        // 3º Cenário: Testando se o produto é adicionado sem nome declarado:
+        produtoBuilder
+                .adicionarNome("")
                 .adicionarQuantidade(13)
                 .adicionarValor(59.90)
                 .builder();
-
-        // Capturando a mensagem do span:
-        // String mensagem = controleDeProdutoPage.spanMensagem.getText();
         // Validação do título do modal:
-        // assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
+        assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
+        // 1º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        // 2º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        //-----------------------------------------------------------------------------------
+
+        // 4º Cenário: Testando se o produto é adicionado sem valor declarado:
+        produtoBuilder
+                .adicionarNome("Machado")
+                .adicionarQuantidade(13)
+                .adicionarValor(null)
+                .builder();
+        // Validação do título do modal:
+        assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
+        // 1º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        // 2º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        //-----------------------------------------------------------------------------------
+
+        // 5º Cenário: Testando se o produto é adicionado sem data declarada:
+        produtoBuilder
+                .adicionarValor(19.75)
+                .adicionarQuantidade(13)
+                .adicionarData("")
+                .builder();
+        // Validação do título do modal:
+        assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
+        // 1º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
+        // 2º click para sair do modal para não atrapalhar o próximo test:
+        controleDeProdutoPage.btnSair.click();
     }
 }
 

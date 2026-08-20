@@ -60,6 +60,7 @@ public class ControleDeProdutoPO extends BasePO{
         escrever(inputData, data);
         btnSalvar.click();
     }
+
     /*
     // Versão com Builder do method que cadastra produto:
     public void cadastrarProduto(ProdutoBuilder produtoBuilder) {
