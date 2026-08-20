@@ -16,14 +16,14 @@ public class ControleDeProdutoTest extends BaseTest {
 
     // Atributos:
     String mensagem = "Todos os campos são obrigatórios para o cadastro!";
-    private static LoginPO loginPage;
+    // private static LoginPO loginPage;
     private static ControleDeProdutoPO controleDeProdutoPage;
 
     @BeforeClass
     public static void prepararTeste() {
-        // Instância do Obj LoginPO para logar:
-        loginPage = new LoginPO(driver);
-        // Invocando ação de logar a partir da instância 'loginPage':
+        // Instância do Obj LoginPO para Entrar:
+        LoginPO loginPage = new LoginPO(driver);
+        // Invocando ação de Entrar a partir da instância 'loginPage':
         loginPage.executarAcaoDeLogar("admin@admin.com", "admin@123");
         // Instância do Obj ControleDeProdutoPO:
         controleDeProdutoPage = new ControleDeProdutoPO(driver);
