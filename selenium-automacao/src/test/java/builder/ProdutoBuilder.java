@@ -45,7 +45,12 @@ public class ProdutoBuilder {
     }
 
     public void builder() {
-       ControleDeProdutoPO controleDeProdutoPO = new ControleDeProdutoPO(this.driver);
+        escrever(inputCodigo, produtoBuilder.codigo);
+        escrever(inputNome, produtoBuilder.nome);
+        escrever(inputQuantidade, produtoBuilder.quantidade);
+        escrever(inputValor, produtoBuilder.valor);
+        escrever(inputData, produtoBuilder.data);
+        btnSalvar.click();
     }
 }
 
