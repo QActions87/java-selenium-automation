@@ -11,9 +11,11 @@ public class ProdutoBuilder {
     public String quantidade = "1";
     public String valor = "1.0";
     public String data = "17/08/2026";
+    private WebDriver driver;
+
     // Construtor recebendo o driver:
     public ProdutoBuilder(WebDriver driver) {
-
+        this.driver = driver;
     }
     // Métodos fluentes que retornam a própria instância:
     public ProdutoBuilder adicionarCodigo(String codigo) {
