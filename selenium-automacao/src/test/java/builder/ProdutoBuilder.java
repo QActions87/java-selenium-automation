@@ -27,12 +27,12 @@ public class ProdutoBuilder {
         return this;
     }
 
-    public ProdutoBuilder adicionarQuantidade(String quantidade) {
+    public ProdutoBuilder adicionarQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
         return this;
     }
 
-    public ProdutoBuilder adicionarValor(String valor) {
+    public ProdutoBuilder adicionarValor(Double valor) {
         this.valor = valor;
         return this;
     }
@@ -45,8 +45,8 @@ public class ProdutoBuilder {
     public void builder() {
         controleDeProdutoPO.escrever(controleDeProdutoPO.inputCodigo, codigo);
         controleDeProdutoPO.escrever(controleDeProdutoPO.inputNome, nome);
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputQuantidade, quantidade);
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputValor, valor);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputQuantidade, (quantidade != null) ? quantidade.toString() : "");
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputValor, (valor != null) ? valor.toString() : "");
         controleDeProdutoPO.escrever(controleDeProdutoPO.inputData, data);
         controleDeProdutoPO.btnSalvar.click();
     }

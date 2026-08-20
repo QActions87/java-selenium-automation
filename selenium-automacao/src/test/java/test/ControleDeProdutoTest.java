@@ -73,8 +73,8 @@ public class ControleDeProdutoTest extends BaseTest{
         // Testando encadeamento de métodos com o builder:
         produtoBuilder
                 .adicionarNome("Martelo")
-                .adicionarQuantidade("13")
-                .adicionarValor("59.90")
+                .adicionarQuantidade(13)
+                .adicionarValor(59.90)
                 .builder();
         // Capturando a mensagem do span:
         String mensagem = controleDeProdutoPage.spanMensagem.getText();

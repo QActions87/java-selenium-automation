@@ -1,6 +1,5 @@
 package pageobject;
 
-import builder.ProdutoBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,6 +60,7 @@ public class ControleDeProdutoPO extends BasePO{
         escrever(inputData, data);
         btnSalvar.click();
     }
+    /*
     // Versão com Builder do method que cadastra produto:
     public void cadastrarProduto(ProdutoBuilder produtoBuilder) {
         escrever(inputCodigo, produtoBuilder.codigo);
@@ -70,6 +70,7 @@ public class ControleDeProdutoPO extends BasePO{
         escrever(inputData, produtoBuilder.data);
         btnSalvar.click();
     }
+     */
 }
 
 
