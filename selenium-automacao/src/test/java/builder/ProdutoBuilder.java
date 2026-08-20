@@ -45,11 +45,11 @@ public class ProdutoBuilder {
     }
 
     public void builder() {
-        controleDeProdutoPO.escrever(inputCodigo, produtoBuilder.codigo);
-        controleDeProdutoPO.escrever(inputNome, produtoBuilder.nome);
-        controleDeProdutoPO.escrever(inputQuantidade, produtoBuilder.quantidade);
-        controleDeProdutoPO.escrever(inputValor, produtoBuilder.valor);
-        controleDeProdutoPO.escrever(inputData, produtoBuilder.data);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputCodigo, produtoBuilder.codigo);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputNome, produtoBuilder.nome);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputQuantidade, produtoBuilder.quantidade);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputValor, produtoBuilder.valor);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputData, produtoBuilder.data);
         controleDeProdutoPO.btnSalvar.click();
     }
 }
