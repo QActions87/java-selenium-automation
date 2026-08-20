@@ -45,12 +45,12 @@ public class ProdutoBuilder {
     }
 
     public void builder() {
-        escrever(inputCodigo, produtoBuilder.codigo);
-        escrever(inputNome, produtoBuilder.nome);
-        escrever(inputQuantidade, produtoBuilder.quantidade);
-        escrever(inputValor, produtoBuilder.valor);
-        escrever(inputData, produtoBuilder.data);
-        btnSalvar.click();
+        controleDeProdutoPO.escrever(inputCodigo, produtoBuilder.codigo);
+        controleDeProdutoPO.escrever(inputNome, produtoBuilder.nome);
+        controleDeProdutoPO.escrever(inputQuantidade, produtoBuilder.quantidade);
+        controleDeProdutoPO.escrever(inputValor, produtoBuilder.valor);
+        controleDeProdutoPO.escrever(inputData, produtoBuilder.data);
+        controleDeProdutoPO.btnSalvar.click();
     }
 }
 
