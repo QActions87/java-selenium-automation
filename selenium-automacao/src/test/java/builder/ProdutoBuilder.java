@@ -11,11 +11,12 @@ public class ProdutoBuilder {
     public String quantidade = "1";
     public String valor = "1.0";
     public String data = "17/08/2026";
-    private WebDriver driver;
+    private ControleDeProdutoPO controleDeProdutoPO;
 
     // Construtor recebendo o driver:
-    public ProdutoBuilder(WebDriver driver) {
-        this.driver = driver;
+    public ProdutoBuilder(ControleDeProdutoPO controleDeProdutoPO) {
+
+        this.controleDeProdutoPO = controleDeProdutoPO;
     }
     // Métodos fluentes que retornam a própria instância:
     public ProdutoBuilder adicionarCodigo(String codigo) {
@@ -44,7 +45,7 @@ public class ProdutoBuilder {
     }
 
     public void builder() {
-        new ControleDeProdutoPO()
+       ControleDeProdutoPO controleDeProdutoPO = new ControleDeProdutoPO(this.driver);
     }
 }
 
