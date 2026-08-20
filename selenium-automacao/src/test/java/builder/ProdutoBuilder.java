@@ -4,11 +4,11 @@ import pageobject.ControleDeProdutoPO;
 
 public class ProdutoBuilder {
     // Valores padrão:
-    public String codigo = "00001";
-    public String nome = "Produto Padrão";
-    public Integer quantidade = 1;
-    public Double valor = 1.0;
-    public String data = "17/08/2026";
+    private String codigo = "00001";
+    private String nome = "Produto Padrão";
+    private Integer quantidade = 1;
+    private Double valor = 1.0;
+    private String data = "17/08/2026";
     private ControleDeProdutoPO controleDeProdutoPO;
 
     // Construtor recebendo o driver:
