@@ -12,7 +12,8 @@ import static org.junit.Assert.assertEquals;
 
 // Orientação do JUnit para que os testes sejam executados em ordem numérica crescente:
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ControleDeProdutoTest extends BaseTest{
+public class ControleDeProdutoTest extends BaseTest {
+
     // Atributos:
     String mensagem = "Todos os campos são obrigatórios para o cadastro!";
     private static LoginPO loginPage;
@@ -29,109 +30,104 @@ public class ControleDeProdutoTest extends BaseTest{
         // assertEquals para validar que estamos na tela Controle de Produtos:
         assertEquals("Controle de Produtos", loginPage.obterTituloDaPaginaDeLogado());
     }
-    // Casos de Teste:
+    /**
+     * Rodar toda a suite para não ocorrer erro por conta do bug que a
+     * aplicção tem: da primeira vez que o botão 'Criar' e 'Sair'
+     * são acionados, precisam de 2 clicks. Apenas da 1ª vez.*/
+    // Suite de Testes Positivos:
     @Test
     public void TC001_deveAbrirModalParaCadastroAoClicarNoBotaoCriar() {
-        // 1º Click no botão 'Criar':
+        // 1º e 2º Click no botão 'Criar' (Bug da aplicação: exige 2 cliques na primeira abertura da sessão):
         controleDeProdutoPage.buttonCriar.click();
-        // 2º Click no botão 'Criar':
         controleDeProdutoPage.buttonCriar.click();
+
         // Capturando o título do modal, após clicar em Criar:
         String titulo = controleDeProdutoPage.tituloModal.getText();
         // Validação do título do modal:
         assertEquals("Produto", titulo);
-        // 1º click para sair do modal para não atrapalhar o próximo test:
+
+        // 1º e 2º click no botão 'Sair' (Bug da aplicação: exige 2 cliques no primeiro fechamento):
         controleDeProdutoPage.btnSair.click();
-        // 2º click para sair do modal para não atrapalhar o próximo test:
         controleDeProdutoPage.btnSair.click();
     }
-    /*
-    @Test
-    public void TC002_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
-        // 1º Click no botão 'Criar':
-        controleDeProdutoPage.buttonCriar.click();
-        // 2º Click no botão 'Criar':
-        controleDeProdutoPage.buttonCriar.click();
-        // Inputs para cadastrar produto:
-        controleDeProdutoPage.cadastrarProduto("", "Machado", 13, 21.00, "17/08/2026");
-        // Capturando a mensagem do span:
-        String mensagem = controleDeProdutoPage.spanMensagem.getText();
-        // Validação do título do modal:
-        assertEquals("Todos os campos são obrigatórios para o cadastro!", mensagem);
-    }
-    */
+
     // Suite de testes negativos:
     // Testando implementação do pattern Builder:
     @Test
     public void TC003_naoDeveSerPossivelCadastrarUmProdutoSemPreencherTodosOsCampos() {
-        // 1º Click no botão 'Criar':
-        controleDeProdutoPage.buttonCriar.click();
-        // 2º Click no botão 'Criar':
-        controleDeProdutoPage.buttonCriar.click();
         // Instanciando builder para preencher os dados na tela:
         ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleDeProdutoPage);
-        // Chamando o method 'builder' a partir da instância produtoBuilder do Builder para efetuar o cadastro:
 
         // Cenários de testes:
-        // 1º Cenário:Testando se o produto é adicionado sem código:
+        // 1º Cenário: Testando se o produto é adicionado sem código:
+        // Click no botão 'Criar' (A partir da 2ª abertura na mesma janela, 1 clique é suficiente):
+        controleDeProdutoPage.buttonCriar.click();
+
         produtoBuilder
-                .adicionarNome("")
+                .adicionarCodigo("")
                 .builder();
-        // Validação do título do modal:
+
+        // Validação da mensagem de erro do span:
         assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
-        //-----------------------------------------------------------------------------------
+        // Click para sair do modal (1 clique é suficiente após a 1ª execução):
+        controleDeProdutoPage.btnSair.click();
+        // -----------------------------------------------------------------------------------
 
         // 2º Cenário: Testando se o produto é adicionado sem quantidade declarada:
+        controleDeProdutoPage.buttonCriar.click();
+
         produtoBuilder
                 .adicionarQuantidade(null)
                 .builder();
-        // Validação do título do modal:
+
+        // Validação da mensagem de erro do span:
         assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
-        // 1º click para sair do modal para não atrapalhar o próximo test:
+        // Click para sair do modal:
         controleDeProdutoPage.btnSair.click();
-        // 2º click para sair do modal para não atrapalhar o próximo test:
-        controleDeProdutoPage.btnSair.click();
-        //-----------------------------------------------------------------------------------
+        // -----------------------------------------------------------------------------------
 
         // 3º Cenário: Testando se o produto é adicionado sem nome declarado:
+        controleDeProdutoPage.buttonCriar.click();
+
         produtoBuilder
                 .adicionarNome("")
                 .adicionarQuantidade(13)
                 .adicionarValor(59.90)
                 .builder();
-        // Validação do título do modal:
+
+        // Validação da mensagem de erro do span:
         assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
-        // 1º click para sair do modal para não atrapalhar o próximo test:
+        // Click para sair do modal:
         controleDeProdutoPage.btnSair.click();
-        // 2º click para sair do modal para não atrapalhar o próximo test:
-        controleDeProdutoPage.btnSair.click();
-        //-----------------------------------------------------------------------------------
+        // -----------------------------------------------------------------------------------
 
         // 4º Cenário: Testando se o produto é adicionado sem valor declarado:
+        controleDeProdutoPage.buttonCriar.click();
+
         produtoBuilder
                 .adicionarNome("Machado")
                 .adicionarQuantidade(13)
                 .adicionarValor(null)
                 .builder();
-        // Validação do título do modal:
+
+        // Validação da mensagem de erro do span:
         assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
-        // 1º click para sair do modal para não atrapalhar o próximo test:
+        // Click para sair do modal:
         controleDeProdutoPage.btnSair.click();
-        // 2º click para sair do modal para não atrapalhar o próximo test:
-        controleDeProdutoPage.btnSair.click();
-        //-----------------------------------------------------------------------------------
+        // -----------------------------------------------------------------------------------
 
         // 5º Cenário: Testando se o produto é adicionado sem data declarada:
+        controleDeProdutoPage.buttonCriar.click();
+
         produtoBuilder
                 .adicionarValor(19.75)
                 .adicionarQuantidade(13)
                 .adicionarData("")
                 .builder();
-        // Validação do título do modal:
+
+        // Validação da mensagem de erro do span:
         assertEquals(mensagem, controleDeProdutoPage.spanMensagem.getText());
-        // 1º click para sair do modal para não atrapalhar o próximo test:
-        controleDeProdutoPage.btnSair.click();
-        // 2º click para sair do modal para não atrapalhar o próximo test:
+        // Click para sair do modal:
         controleDeProdutoPage.btnSair.click();
     }
 }
