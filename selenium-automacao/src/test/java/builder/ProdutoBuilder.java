@@ -1,7 +1,5 @@
 package builder;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pageobject.ControleDeProdutoPO;
 
 public class ProdutoBuilder {
@@ -45,11 +43,11 @@ public class ProdutoBuilder {
     }
 
     public void builder() {
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputCodigo, produtoBuilder.codigo);
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputNome, produtoBuilder.nome);
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputQuantidade, produtoBuilder.quantidade);
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputValor, produtoBuilder.valor);
-        controleDeProdutoPO.escrever(controleDeProdutoPO.inputData, produtoBuilder.data);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputCodigo, codigo);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputNome, nome);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputQuantidade, quantidade);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputValor, valor);
+        controleDeProdutoPO.escrever(controleDeProdutoPO.inputData, data);
         controleDeProdutoPO.btnSalvar.click();
     }
 }
