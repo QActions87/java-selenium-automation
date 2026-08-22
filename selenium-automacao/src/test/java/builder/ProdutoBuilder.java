@@ -2,6 +2,8 @@ package builder;
 
 import pageobject.ControleDeProdutoPO;
 
+/**
+ * Classe que sabe construir ou adicionar um produto na tela*/
 public class ProdutoBuilder {
     // Valores padrão:
     private String codigo = "00001";
