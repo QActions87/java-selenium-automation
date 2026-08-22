@@ -21,6 +21,8 @@ public abstract class BaseTest {
      * Constante com o path relativo até o binário do ChromeDriver (a partir da raiz do projeto) */
     private static final String caminhoDriver = "src/test/java/resource/chromedriver-v150";
 
+    /**
+     * Method para iniciar o driver do navegador */
     @BeforeClass // Informa que este metodo sera executando antes de qualquer outro
     // Metodo auxiliar privado responsável por configurar e inicializar a sessão do navegador
     public static void iniciar() {
