@@ -22,7 +22,7 @@ public abstract class BaseTest {
     private static final String caminhoDriver = "src/test/java/resource/chromedriver-v150";
 
     /**
-     * Method para iniciar o driver do navegador */
+     * Method para iniciar o driver do navegador, antes de qualquer classe de teste */
     @BeforeClass // Informa que este metodo sera executando antes de qualquer outro
     // Metodo auxiliar privado responsável por configurar e inicializar a sessão do navegador
     public static void iniciar() {
@@ -60,6 +60,8 @@ public abstract class BaseTest {
         // Envia o comando para o navegador carregar o endereço da URL base
         driver.get(urlBase);
     }
+    /**
+     * Method para finaliza o driver do navegador, depois de qualquer classe de teste */
     // Informa que este method será executado após os outro
     @AfterClass
     public static void finalizar() {
