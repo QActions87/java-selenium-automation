@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * Classe base para páginas Page Object */
 public class ControleDeProdutoPO extends BasePO{
     // Capturando botão 'Criar':
     @FindBy(id = "btn-adicionar")
