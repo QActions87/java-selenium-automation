@@ -43,6 +43,7 @@ public class ControleDeProdutoPO extends BasePO{
     @FindBy(id = "mensagem")
     public WebElement spanMensagem;
 
+
     /**
      * Construtor com parâmetro:
      * Construtor base para criação da fábrica de elementos:

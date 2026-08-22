@@ -29,7 +29,7 @@ public class    LoginPO extends BasePO {
         super(driver);
     }
 
-    // Method para obter mensagem do span:
+    /** Method para obter mensagem do span */
     public String obterMensagem() {
         return spanMensagem.getText();
     }
