@@ -13,7 +13,7 @@ public class ProdutoBuilder {
     private String data = "17/08/2026";
     private ControleDeProdutoPO controleDeProdutoPO;
 
-    // Construtor recebendo o driver:
+    /** Construtor do ProdutoBuilder recebendo o driver */
     public ProdutoBuilder(ControleDeProdutoPO controleDeProdutoPO) {
 
         this.controleDeProdutoPO = controleDeProdutoPO;
