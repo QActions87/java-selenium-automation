@@ -17,7 +17,8 @@ public abstract class BaseTest {
     /**
      * Constante com a URL base do site que será testado pela automação */
     private static final String urlBase = "file:///home/atom/Documents/QA/JAVA/JAVA-Selenium/Outros/controle-de-produtos/sistema/login.html";
-    // Constante com o caminho relativo até o binário do ChromeDriver (a partir da raiz do projeto)
+    /**
+     * Constante com o path relativo até o binário do ChromeDriver (a partir da raiz do projeto) */
     private static final String caminhoDriver = "src/test/java/resource/chromedriver-v150";
 
     @BeforeClass // Informa que este metodo sera executando antes de qualquer outro
