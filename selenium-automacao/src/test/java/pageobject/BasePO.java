@@ -23,7 +23,8 @@ public abstract class BasePO {
         PageFactory.initElements(this.driver, this);
     }
 
-    // Method para obter título da página após entrar no sistema:
+    /**
+     * Method para obter título da página após entrar no sistema. */
     public String obterTituloDaPaginaDeLogado() {
         return driver.getTitle();
     }
