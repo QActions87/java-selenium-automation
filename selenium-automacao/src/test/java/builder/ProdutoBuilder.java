@@ -13,12 +13,12 @@ public class ProdutoBuilder {
     private String data = "17/08/2026";
     private ControleDeProdutoPO controleDeProdutoPO;
 
-    /** Construtor do ProdutoBuilder recebendo o driver */
+    /** Construtor do ProdutoBuilder recebendo o driver da página de controle de produto */
     public ProdutoBuilder(ControleDeProdutoPO controleDeProdutoPO) {
 
         this.controleDeProdutoPO = controleDeProdutoPO;
     }
-    // Métodos fluentes que retornam a própria instância:
+    /** Métodos fluentes que retornam a própria instância */
     public ProdutoBuilder adicionarCodigo(String codigo) {
         this.codigo = codigo;
         return this;
