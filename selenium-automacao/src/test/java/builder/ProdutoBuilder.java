@@ -18,32 +18,44 @@ public class ProdutoBuilder {
 
         this.controleDeProdutoPO = controleDeProdutoPO;
     }
-    /** Métodos fluentes que retornam a própria instância */
+    // Métodos fluentes que retornam a própria instância:
+    /**
+     * Métodos que adiciona um código ao cadastro */
     public ProdutoBuilder adicionarCodigo(String codigo) {
         this.codigo = codigo;
         return this;
     }
 
+    /**
+     * Métodos que adiciona um nome ao cadastro */
     public ProdutoBuilder adicionarNome(String nome) {
         this.nome = nome;
         return this;
     }
 
+    /**
+     * Métodos que adiciona uma quantidade ao cadastro */
     public ProdutoBuilder adicionarQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
         return this;
     }
 
+    /**
+     * Métodos que adiciona um valor ao cadastro */
     public ProdutoBuilder adicionarValor(Double valor) {
         this.valor = valor;
         return this;
     }
 
+    /**
+     * Métodos que adiciona uma data ao cadastro */
     public ProdutoBuilder adicionarData(String data) {
         this.data = data;
         return this;
     }
 
+    /**
+     * Métodos que constroi o produto no cadastro */
     public void builder() {
         controleDeProdutoPO.escrever(controleDeProdutoPO.inputCodigo, codigo);
         controleDeProdutoPO.escrever(controleDeProdutoPO.inputNome, nome);
